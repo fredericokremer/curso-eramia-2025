@@ -22,7 +22,7 @@ serve:
 	@bentoml serve bbb-model:latest --port 8085
 
 containerize:
-	@bentoml containerize bbb-model:latest --opt --output-dir ./bentoml_build
+	@bentoml containerize bbb-model:latest
 
 deploy:
 	@git push render main

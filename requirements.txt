@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+umap-learn
+bentoml
+imbalanced-learn
+plotly
+pydantic
+rdkit-pypi
