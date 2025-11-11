@@ -16,5 +16,5 @@ input_spec = JSON(pydantic_model=Molecule)
 @svc.api(input=input_spec, output=NumpyNdarray())
 def classify(molecule: Molecule) -> np.ndarray:
     features = smiles_to_morganfingerprints(molecule.smiles)
-    result = bbb_clf_runner.predict.run(np.array([features]))
+    result = bbb_clf_runner.predict_proba.run(np.array([features]))
     return result
