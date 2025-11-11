@@ -7,6 +7,9 @@ features:
 train:
 	@python train.py
 
+save_to_bento:
+	@python save_to_bento.py
+
 build:
 	@bentoml build
 

@@ -1,4 +1,3 @@
-from features import smiles_to_morganfingerprints
 from sklearn.model_selection import train_test_split
 from imblearn.under_sampling import RandomUnderSampler
 from sklearn.ensemble import ExtraTreesClassifier
@@ -7,7 +6,6 @@ from sklearn.metrics import classification_report
 from typing import Tuple
 from argparse import ArgumentParser
 import pandas as pd
-import bentoml
 import pickle
 
 def main():
@@ -26,9 +24,6 @@ def main():
     with open(arguments.output, 'wb') as writer:
         writer.write(pickle.dumps(model))
     print(f"Model file: {arguments.output}")
-
-    saved_model = bentoml.sklearn.save_model('bbb-model', model)
-    print(f"Model tag: {saved_model}")
 
     print('Classification report with test data:')
     print(report)
