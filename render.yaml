@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: bbb-model-service
-    env: python
-    pythonVersion: "3.8"
-    buildCommand: |
-      "pip install -r requirements.txt"
-      "bentoml build"
-    startCommand: "bentoml serve bbb-model:latest --port 8085"

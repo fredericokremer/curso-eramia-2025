@@ -1,14 +1,6 @@
 setup:
 	@conda env create || conda env update
 
-dirs:
-	@mkdir -p data/raw
-	@mkdir -p data/features
-	@mkdir -p data/models
-
-download:
-	@bash scripts/download_data.sh
-
 features:
 	@python features.py
 
