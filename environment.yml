@@ -1,0 +1,19 @@
+name: curso-eramia-2025
+channels:
+  - anaconda
+  - rdkit
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyter
+  - rdkit=2022.03.4
+  - pip
+  - pip:
+    - pandas
+    - numpy
+    - scikit-learn
+    - bentoml
+    - imbalanced-learn
+    - plotly
+    - tqdm
+    - pydantic
