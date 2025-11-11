@@ -1,12 +1,9 @@
 services:
   - type: web
-    name: bbb-model-service # Service name reverted
-    env: docker # Use Docker environment
-    
-    # Point Render to the directory created by 'bentoml containerize'
-    # This directory contains the Dockerfile and all Conda/model dependencies.
-    dockerContext: ./bentoml_build
-    dockerfilePath: ./bentoml_build/Dockerfile
-    
-    # Render provides a $PORT environment variable.
-    # The BentoML-generated Dockerfile entrypoint uses this automatically.
+    name: bbb-model-service
+    env: python
+    pythonVersion: "3.8"
+    buildCommand: |
+      "pip install -r requirements.txt"
+      "bentoml build"
+    startCommand: "bentoml serve bbb-model:latest --port 8085"
