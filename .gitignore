@@ -1,6 +1,3 @@
-# data
-data/
-
 # configuration
 bentoctl.tfvars
 deployment_config.yaml
